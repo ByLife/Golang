@@ -1,0 +1,1 @@
+{"Attempts":6,"Error":true,"Run":true,"ToFind":"CASQUETTE\r","Word":"C___U_T_E"}
