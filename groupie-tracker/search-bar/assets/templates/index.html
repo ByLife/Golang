@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    {{template "header.html"}}
+    {{$page := 0}}
+    <body>
+        <section class="page">
+            <header>
+                <H1>GROUPIE TRACKER </H1>
+            </header>
+        </section>
+        {{if eq .Page 0}}
+        <div class="input">
+            {{if eq .HasSearched false}}
+            <form method="GET">
+                <div class="wrap">
+                    <div class="search">
+                       <input type="text" class="searchTerm" name="s" placeholder="Rechercher" list="dataList">
+                       <button type="submit" class="searchButton">
+                         <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                 </div>
+                <datalist id="dataList">
+                    {{range $u, $v := .DataArtists.All}}
+                        {{range $y, $z := $v.Members}}
+                    <option value="{{$z}} - Member"></option>
+                        {{end}}
+                    <option value="{{$v.Name}} - Artist/Band"></option>
+                    <option value="{{$v.CreationDate}} - Creation Date"></option>
+                    {{end}}
+                </datalist>
+            </form>
+            {{else}}
+            <a href="/" class="back-href"> < Go Back </a>
+            {{end}}
+        </div>
+        {{end}}
+        <div class="contain">
+         <div class="artists">
+            {{if eq .Page 0}}
+                {{range .DataArtists.All}}
+                    <div>
+                        <a href="?id={{.Id}}"><img src="{{.ImgURI}}"></a>
+                    </div>
+                {{end}}
+            {{else}}
+                <img src="{{.DataArtist.All.ImgURI}}">
+                <div>
+                    {{range $u, $v:= .DataDatesLocations.All.DatesLocations}}
+                    <p>Location et dates: {{$u}}</p>
+                        {{range $v}}
+                            <p>{{.}}</p>
+                        {{end}}
+                    {{end}}
+                </div>
+                <p>Nom: {{.DataArtist.All.Name}}</p>
+                <p>Année de création: {{.DataArtist.All.CreationDate}}</p>
+                <div>
+                    <p>Membres:</p>
+                    {{range $u, $v := .DataArtist.All.Members}}
+                        <p>{{$v}}</p>
+                    {{end}}
+                </div>
+                <a href="/" class="back-href"> < Go Back </a>
+            {{end}}   
+        </div>
+      </div>
+     {{template "footer.html"}}
+     </body>
+</html>

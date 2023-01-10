@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    {{template "header.html"}}
+    {{$page := 0}}
+    <body>
+        <section class="page">
+            <header>
+                <H1>GROUPIE TRACKER </H1>
+            </header>
+        </section>
+        {{if eq .Page 0}}
+        <div class="input">
+            {{if eq .HasSearched false}}
+            <form method="GET">
+                <input type="range" name="date" id="date" step="1" min="1900" max="2015" oninput="this.nextElementSibling.value = this.value">
+                <output>1960</output>
+                <p>Number of members:</p>
+                <div>
+                    {{range $u, $v := .NumberOfMembers}}
+                    <input type="radio" id="{{$u}}" name="nummembers" value="{{$v}}">
+                    <label for="{{$v}}">{{$v}} Membres</label>
+                    {{end}}
+                    <button class="btn first" type="submit">Envoyer</button>
+            </form>
+        </div>
+            {{else}}
+            <a href="/" class="back-href"> < Go Back </a>
+            {{end}}
+        </div>
+        {{end}}
+        <div class="contain">
+         <div class="artists">
+            {{if eq .Page 0}}
+                {{range .DataArtists.All}}
+                    <div>
+                        <a href="?id={{.Id}}"><img src="{{.ImgURI}}"></a>
+                    </div>
+                {{end}}
+            {{else}}
+                <img src="{{.DataArtist.All.ImgURI}}">
+                <div>
+                    {{range $u, $v:= .DataDatesLocations.All.DatesLocations}}
+                    <p>Location et dates: {{$u}}</p>
+                        {{range $v}}
+                            <p>{{.}}</p>
+                        {{end}}
+                    {{end}}
+                </div>
+                <p>Nom: {{.DataArtist.All.Name}}</p>
+                <p>Année de création: {{.DataArtist.All.CreationDate}}</p>
+                <div>
+                    <p>Membres:</p>
+                    {{range $u, $v := .DataArtist.All.Members}}
+                        <p>{{$v}}</p>
+                    {{end}}
+                </div>
+            {{end}}   
+        </div>
+      </div>
+     {{template "footer.html"}}
+     </body>
+</html>

@@ -1,0 +1,198 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+*{
+    width: 100%;
+    overflow-x: hidden;
+}
+body{
+    font-family: 'Sansita Swashed', cursive;
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-image: radial-gradient(circle at 45.79% 61.56%, #ff88b6 0, #ff7fbc 8.33%, #ff76c2 16.67%, #f96dc7 25%, #e964cd 33.33%, #d65cd3 41.67%, #be55d8 50%, #a250dd 58.33%, #7f4fe3 66.67%, #4f50e8 75%, #0051ec 83.33%, #0054ef 91.67%, #0056f1 100%);
+}
+
+@keyframes keyf {
+    10%{
+        color: red;
+    }
+    50%{
+        color: purple;
+    }
+    100%{
+        color: red;
+    }
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 20%;
+    margin-right: 10%;
+    float: right;
+  }
+
+header{
+    font-size: 42px;
+    text-align: center;
+}
+
+.artists{
+    display: grid;
+    grid-template-columns:repeat(5,1fr);
+    grid-gap: 1rem;
+    row-gap: 1rem;
+    margin: 1rem;
+}
+strong{
+    animation: multicolor 0.5s;
+    display: inline-grid;
+    margin-left: 7%;
+}
+
+img:hover{
+    width: 270px;
+    animation: rotation 3s;
+}
+
+img{
+    width: 250px;
+    border-radius: 100%;
+}
+
+div{
+    overflow: hidden;
+}
+
+.contain{
+    margin-left: 0.5%;
+    margin-right: -3%;
+}
+
+.search-box {
+    position: relative;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    
+  }
+  
+  .search-box:hover > .search-text{
+    width: 240px;
+    padding: 0 6px;
+  }
+  
+  .search-box:hover > .search-btn{
+    background: white;
+    color: black;
+    
+  }
+  
+  .search-btn {
+    color: #e84118;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    
+  }
+  .search-btn > i {
+    font-size: 30px;
+  }
+  
+  .search-text {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: normal;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+  }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(121,92,9,1) 0%, rgba(255,0,0,1) 0%, rgba(255,248,0,1) 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(121,92,9,1) 0%, rgba(255,0,0,1) 0%, rgba(255,248,0,1) 100%);
+}
+
+::-webkit-scrollbar-track-piece {
+    background: rgb(0, 0, 0);
+}
+
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg)
+    }
+    25%{
+        transform: rotate(60deg)
+    }
+    50%{
+        transform: rotate(-35deg)
+    }
+    75%{
+        transform: rotate(50deg)
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}

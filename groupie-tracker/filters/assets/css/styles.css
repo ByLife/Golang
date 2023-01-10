@@ -1,0 +1,123 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+
+*{
+    width: 100%;
+    overflow-x: hidden;
+}
+body{
+    font-family: 'Sansita Swashed', cursive;
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-image: radial-gradient(circle at 45.79% 61.56%, #ff88b6 0, #ff7fbc 8.33%, #ff76c2 16.67%, #f96dc7 25%, #e964cd 33.33%, #d65cd3 41.67%, #be55d8 50%, #a250dd 58.33%, #7f4fe3 66.67%, #4f50e8 75%, #0051ec 83.33%, #0054ef 91.67%, #0056f1 100%);
+}
+
+
+
+.input{
+    margin-left: 25%;
+    width: 50%;
+    font-size: 15px;
+}
+
+.btn {
+    width: 25%;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+  }
+  .btn:hover,
+  .btn:focus {
+      color: #fff;
+      outline: 0;
+    }
+  
+  .first {
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  }
+  .btn:hover{
+      box-shadow: 0 0 40px 40px #e74c3c inset;
+  }
+
+@keyframes keyf {
+    10%{
+        color: red;
+    }
+    50%{
+        color: purple;
+    }
+    100%{
+        color: red;
+    }
+}
+
+header{
+    font-size: 42px;
+    text-align: center;
+}
+
+.artists{
+    display: grid;
+    grid-template-columns:repeat(5,1fr);
+    grid-gap: 1rem;
+    row-gap: 1rem;
+    margin: 1rem;
+}
+strong{
+    animation: multicolor infinite 56s;
+    display: inline-grid;
+    margin-left: 7%;
+}
+
+img:hover{
+    width: 270px;
+}
+img{
+    width: 250px;
+    border-radius: 100%;
+}
+
+
+.contain{
+    margin-left: 0.5%;
+    margin-right: -3%;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(121,92,9,1) 0%, rgba(255,0,0,1) 0%, rgba(255,248,0,1) 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(121,92,9,1) 0%, rgba(255,0,0,1) 0%, rgba(255,248,0,1) 100%);
+}
+
+::-webkit-scrollbar-track-piece {
+    background: rgb(0, 0, 0);
+}

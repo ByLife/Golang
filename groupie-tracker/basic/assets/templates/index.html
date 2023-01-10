@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    {{template "header.html"}}
+    {{$page := 0}}
+    <body>
+        <section class="page">
+            <header>
+                <H1>GROUPIE TRACKER </H1>
+            </header>
+        </section>
+        
+        <div class="contain">
+         <div class="artists">
+            {{if eq .Page 0}}
+                {{range .DataArtists.All}}
+                    <div>
+                        <a href="?id={{.Id}}"><img src="{{.ImgURI}}"></a>
+                    </div>
+                {{end}}
+            {{else}}
+                <img src="{{.DataArtist.All.ImgURI}}">
+                <div>
+                    {{range $u, $v:= .DataDatesLocations.All.DatesLocations}}
+                    <p>Location et dates: {{$u}}</p>
+                        {{range $v}}
+                            <p>{{.}}</p>
+                        {{end}}
+                    {{end}}
+                </div>
+                <p>Nom: {{.DataArtist.All.Name}}</p>
+                <p>Année de création: {{.DataArtist.All.CreationDate}}</p>
+                <div>
+                    <p>Membres:</p>
+                    {{range $u, $v := .DataArtist.All.Members}}
+                        <p>{{$v}}</p>
+                    {{end}}
+                </div>
+            {{end}}   
+        </div>
+      </div>
+     {{template "footer.html"}}
+     </body>
+</html>
